@@ -1,0 +1,31 @@
+<p>queries works!</p>
+<div class="queries-container">
+ <h2>Your Queries</h2>
+ 
+ <div class="query-form">
+   <label for="queryTitle">Select Query Title</label>
+   <select id="queryTitle" [(ngModel)]= "selectedQuery" class="form-control">
+     <option value="" disabled>Select a query type</option>
+     <option *ngFor="let query of queryTypes" [value]="query">{{ query }}</option>
+   </select>
+
+   <textarea 
+     placeholder="Describe your issue or query..."
+     [(ngModel)]="queryDescription"
+     rows="4"
+     class="form-control"
+   ></textarea>
+
+   <button class="btn btn-primary" (click)="submitQuery()">Submit Query</button>
+ </div>
+
+ <div class="submitted-queries">
+   <h3>Submitted Queries</h3>
+   <div *ngFor="let query of submittedQueries" class="query-card">
+     <h4>{{ query.title }}</h4>
+     <p><strong>Description:</strong> {{ query.description }}</p>
+     <p><strong>Admin Remarks:</strong> {{ query.adminRemarks }}</p>
+     <p><strong>Status:</strong> {{ query.status }}</p>
+   </div>
+ </div>
+</div>

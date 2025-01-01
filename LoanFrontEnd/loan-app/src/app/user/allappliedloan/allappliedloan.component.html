@@ -1,0 +1,46 @@
+<div class="loan-table-container">
+  <h2>Loan Information</h2>
+  <table class="loan-table">
+    <thead>
+      <tr>
+        <th>Loan ID</th>
+        <th>User ID</th>
+        <th>Loan Scheme ID</th>
+        <th>Loan Office ID</th>
+        <th>Total Repay Amount</th>
+        <th>Loan Amount</th>
+        <th>Duration (Months)</th>
+        <th>Status</th>
+        <th>Closed</th>
+        <th>Interest</th>
+        <th>Monthly Repayment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let loan of loans">
+        <td>{{ loan.loanid }}</td>
+        <td>{{ loan.user_id }}</td>
+        <td>{{ loan.loanscheme_id }}</td>
+        <td>{{ loan.loanOfficeId }}</td>
+        <td>{{ loan.totalRepayAmount }}</td>
+        <td>{{ loan.loanamount }}</td>
+        <td>{{ loan.time }}</td>
+        <td>{{ loan.loanstatus }}</td>
+        <td>{{ loan.closed }}</td>
+        <td>{{ loan.simpleInterest }}</td>
+        <td>{{ loan.monthlyRepayment }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="totalPages > 1" class="pagination">
+    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+</div>
+
+<div *ngIf="loans.length === 0">
+  <p>No loan schemes available at the moment.</p>
+</div>
+<router-outlet></router-outlet>

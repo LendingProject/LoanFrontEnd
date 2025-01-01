@@ -6,12 +6,16 @@ import { AdminViewComponent } from './admin-view/admin-view/admin-view.component
 import { AddLoanOfficerComponent } from './admin-loanOfficer/add-loan-officer/add-loan-officer.component';
 import { ViewLoanOfficerComponent } from './admin-view-loanOfficer/view-loan-officer/view-loan-officer.component';
 import { ViewLoanSchemeComponent } from './admin-view-loanScheme/view-loan-scheme/view-loan-scheme.component';
-import { AddLoanSchemeComponent } from './admin-add-loanScheme/add-loan-scheme/add-loan-scheme.component';
+import { AddLoanSchemeComponent } from './add-loan-scheme/add-loan-scheme/add-loan-scheme.component';
 import { UpdateLoanSchemeComponent } from './admin-update-loanScheme/update-loan-scheme/update-loan-scheme.component';
 import { ViewNpaComponent } from './view-npa/view-npa/view-npa.component';
 import { ViewLoanofficerReportComponent } from './view-loanOfficer-report/view-loanofficer-report/view-loanofficer-report.component';
 import { ViewCustomerComponent } from './view-customer/view-customer/view-customer.component';
-
+import { AppRoutingModule } from '../app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { NgxSearchFilterModule } from 'ngx-search-filter';
+import { ViewLoanRequestComponent } from './view-loan-request/view-loan-request/view-loan-request.component';
 
 
 @NgModule({
@@ -26,10 +30,11 @@ import { ViewCustomerComponent } from './view-customer/view-customer/view-custom
     UpdateLoanSchemeComponent,
     ViewNpaComponent,
     ViewLoanofficerReportComponent,
-    ViewCustomerComponent
+    ViewCustomerComponent,
+    ViewLoanRequestComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,AppRoutingModule,ReactiveFormsModule,FormsModule,NgxSearchFilterModule
   ]
 })
 export class AdminModule { }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  
+</head>
+<body>
+
+  <div class="dashboard-container">
+    <div class="navbar">
+      <!-- Logo Section -->
+      <div class="navbar-logo">
+        <img src="https://via.placeholder.com/40" alt="Logo">
+        <span><strong>Lendify</strong></span>
+      </div>
+  
+      <!-- Menu Section -->
+      <div class="navbar-menu">
+        <a routerLink="loanschemes">All Loan Schemes</a>
+        <a routerLink="appliedloans">Applied Loans</a>
+        <a href="#">Active Loans</a>
+        <a routerLink="payment">Pay EMI</a>
+        <a routerLink="queries">Queries</a>
+        <div class="profile">
+          <a href="#">My Profile</a>
+          <div class="profile-dropdown">
+            <a href="#">Edit Profile</a>
+            <a href="#">Settings</a>
+            <a href="#">Help</a>
+          </div>
+        </div>
+        <div class="logout">
+          <button (click)="logOut()">Logout</button>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+</body>
+</html>
+<router-outlet></router-outlet>

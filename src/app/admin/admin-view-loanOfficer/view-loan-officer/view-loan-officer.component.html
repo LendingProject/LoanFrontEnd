@@ -1,1 +1,46 @@
-<p>view-loan-officer works!</p>
+<div class="container">
+  <h2>Loan Officers</h2>
+
+  <!-- Search Input -->
+  <div>
+    <input [(ngModel)]="searchText" placeholder="Search loan officers" />
+  </div>
+
+  <!-- Loan Officer Table -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Contact Number</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let officer of loanOfficers.contents | filter:searchText">
+        <td>{{ officer.id }}</td>
+        <td>{{ officer.firstName }}</td>
+        <td>{{ officer.lastName }}</td>
+        <td>{{ officer.email }}</td>
+        <td>{{ officer.contactNumber }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteLoanOfficer(officer.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination Controls -->
+  <div class="pagination">
+    <button class="btn btn-primary" (click)="loadPage(pageNumber - 1)" [disabled]="isPrevDisabled()">Previous</button>
+    <span>Page {{ pageNumber + 1 }} of {{ loanOfficers.totalPages }}</span>
+    <button class="btn btn-primary" (click)="loadPage(pageNumber + 1)" [disabled]="isNextDisabled()">Next</button>
+  </div>
+
+  <!-- No Data Message -->
+  <div *ngIf="loanOfficers.contents.length === 0">
+    <p>No loan officers found.</p>
+  </div>
+</div>

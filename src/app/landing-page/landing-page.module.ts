@@ -6,6 +6,7 @@ import { LoginModule } from '../login/login.module';
 import { RegisterModule } from '../register/register.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { FooterComponent } from './footer/footer/footer.component';
 
 
 
@@ -13,10 +14,12 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
   declarations: [
     LandingViewComponent,
     LandingHeaderComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,LoginModule,RegisterModule,AppRoutingModule
-  ]
+  ],
+  exports: [FooterComponent] 
 })
 export class LandingPageModule { }

@@ -1,0 +1,20 @@
+<!-- payment.component.html -->
+
+<div class="body">
+  <h2>Pay Your Emi</h2>
+  
+  <!-- Input for Amount -->
+  <label for="amount">Enter Amount: </label>
+  <input type="number" id="amount" [(ngModel)]="amount" placeholder="Amount in cents" />
+  
+  <!-- Card Element for Payment Details -->
+  <div id="card-element">
+    <!-- A Stripe Element will be inserted here. -->
+  </div>
+
+  <!-- Card Element Error Message -->
+  <div id="card-errors" role="alert"></div>
+
+  <!-- Button to Trigger Payment -->
+  <button (click)="handlePayment()">Pay Now</button>
+</div>

@@ -1,0 +1,112 @@
+/* payment.component.css */
+
+/* Body styling to ensure everything is centered and occupies full height */
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+.body{
+  margin-left: 500px;
+}
+
+/* Container for the payment form */
+.payment-container {
+  width: 100%;
+  max-width: 800px; /* Adjusted width to fit all form elements in a row */
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between; /* Space out the elements */
+  align-items: center; /* Center vertically */
+  flex-direction: row; /* Change to row layout */
+  text-align: center;
+}
+
+/* Styling for the title */
+.payment-container h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0;
+  flex-basis: 100%; /* Ensure the title spans the entire row */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styling for the Stripe card input container */
+#card-element {
+  width: 44%; /* Adjusted width for side-by-side layout */
+  padding: 15px;
+  height: 250px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fafafa;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Error message styles */
+#card-errors {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Styling for the "Pay Now" button */
+button {
+  width: 48%; /* Adjusted width for side-by-side layout */
+  padding: 14px;
+  background-color: #5469d4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #4353b3;
+}
+
+/* Add focus effect for inputs */
+input:focus, #card-element:focus {
+  outline: none;
+  border: 2px solid #5469d4;
+  box-shadow: 0 0 5px rgba(84, 105, 212, 0.5);
+}
+
+/* Responsiveness: Ensure the form is mobile-friendly */
+@media (max-width: 600px) {
+  #card-element {
+    width: 100%;
+    height: 1000px; /* Increase the height on smaller screens */
+  }
+
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #card-element {
+    width: 100%; /* Make card element full width on small screens */
+  }
+}

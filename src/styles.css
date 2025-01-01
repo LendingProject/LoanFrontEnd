@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+/* Ensure the body takes the full height of the page */
+html, body {
+    height: 100%;  /* Make sure the body takes up full height of the screen */
+    margin: 0;  /* Remove default margin */
+    display: flex;
+    flex-direction: column;  /* Align children in a column */
+  }
+  
+  /* Container for the main content, taking up available space */
+  .main-content {
+    flex: 1;  /* Make it flexible and take up remaining space */
+    padding-bottom: 60px;  /* Add space at the bottom for footer */
+  }
+  
+  /* Footer styles */
+  app-footer {
+    background-color: #007bff;  /* Dark footer */
+    color: white;
+    text-align: center;
+    line-height: 60px;  /* Align text vertically */
+    height: 60px;  /* Set footer height */
+    width: 100%;  /* Full width */
+    position: relative;  /* Positioned at the bottom of the page */
+  }
+  
+  app-footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+  

@@ -33,8 +33,10 @@ export class LoginComponent {
     const userRole = payload['role'];
     console.log(userRole[0].authority);
     if (userRole[0].authority === 'ROLE_ADMIN') {
-      this.router.navigateByUrl('/adminDashboard');
-    } else {
+      this.router.navigateByUrl('admin/admindashboard');
+    } else if (userRole[0].authority === 'ROLE_ LOANOFFICER'){
+      this.router.navigateByUrl('/loanOfficerDashboard');
+    }else {
       this.router.navigateByUrl('/userDashboard');
     }
       },error:(err:HttpErrorResponse)=>{}});
